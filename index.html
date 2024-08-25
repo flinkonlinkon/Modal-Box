@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Box</title>
+    
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="bg-gray-400 w-2/3 mx-auto rounded-full">
+    <div class="w-1/3 m-auto mt-48">
+        <h1 class="text-center text-4xl text-orange-300 mt-5 mb-5">Modal</h1>
+        <button id="btnM" class="btn m-auto mt-5 mb-5 relative left-[7rem]">Modal open</button>
+    </div>
+</div>
+<div id="modalBox" class="bg-blue-300 w-3/4 mx-auto rounded-full hidden z-10 relative top-[-340px]
+">
+    <div class="w-1/3 m-auto mt-48">
+        <h1 class="text-center text-4xl text-orange-300 mt-5 mb-5">Modal box open</h1>
+        <button id="btnClose" class="btn m-auto mt-5 mb-5 relative left-[7rem]">close</button>
+    </div> 
+</div>
+</body>
+<script>
+    let btnM = document.querySelector('#btnM')
+    let btnClose = document.querySelector('#btnClose')
+    let modalBox = document.querySelector('#modalBox')
+    btnM.addEventListener('click',()=>{
+        modalBox.classList.remove('hidden');
+        modalBox.classList.add('block');
+    })
+    btnClose.addEventListener('click',()=>{
+        modalBox.classList.add('hidden');
+        modalBox.classList.remove('block');
+    })
+
+</script>
+</html>
